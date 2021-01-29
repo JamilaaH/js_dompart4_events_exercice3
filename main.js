@@ -15,16 +15,10 @@ titre3.addEventListener('dblclick', exo2)
 
 //3 
 let myPara = document.querySelector('p');
-let clique = false
+
 let exo3 = () => {
-    if (!clique) {
-            myPara.setAttribute('class', "text-style")
-            clique = true
-        } else{
-            myPara.removeAttribute("class")
-            clique =false
-        }
-} 
+    myPara.classList.toggle('text-style')
+}
 
 myPara.addEventListener("click", exo3)
 
@@ -32,17 +26,14 @@ myPara.addEventListener("click", exo3)
 
 let para2 = document.querySelectorAll('p')[1].children;
 
+let mySpan = Array.from(para2);
 
-para2[0].addEventListener("click", () => {
-    para2[0].setAttribute('class', "bolder-red")
-});
-para2[1].addEventListener("click", () => {
-    para2[1].setAttribute('class', "bolder-red")
-});
-para2[2].addEventListener("click", () => {
-    para2[2].setAttribute('class', "bolder-red")
+mySpan.forEach(el => {
+    el.addEventListener("click", ()=> {
+        el.classList.toggle('bolder-red')
+    })
 });
 
-// 5
-let para3 = document.querySelectorAll('p')[2].children;
+//5
+
 
